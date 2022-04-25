@@ -1,0 +1,210 @@
+.form-content,
+.signup-form-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  margin: 1rem auto;
+}
+.signup-form-content {
+  height: 80vh;
+}
+.form-box {
+  height: 100%;
+  width: 50%;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px -5px rgba(65, 65, 65, 0.178),
+    5px -5px 10px -5px rgba(65, 65, 65, 0.178);
+}
+.intro-box {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem 0 0;
+}
+.intro-box p {
+  color: #2c2c2c;
+  font-family: Akzidenz-grotesk-bold;
+}
+.line {
+  width: 100%;
+  background: rgb(46, 46, 46);
+  border-color: rgba(51, 51, 51, 0);
+  margin: 0.7rem 0 1rem 0;
+}
+.login-signup-form {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image-box {
+  height: 100%;
+  width: 25%;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  overflow: hidden;
+  box-shadow: -5px -5px 10px -5px rgba(0, 0, 0, 0.178),
+    -5px 5px 10px -5px rgba(0, 0, 0, 0.178);
+}
+.image-box img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.email-box,
+.password-box,
+.confirm-password-box {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.email-box label,
+.password-box label,
+.confirm-password-box label {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.email-box label i,
+.password-box label i,
+.confirm-password-box label i {
+  font-size: 35px;
+  color: #bbbbbb;
+}
+.email-input-animation {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.password-input-box,
+.confirm-password-input-box {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.password-input-box i,
+.confirm-password-input-box i {
+  font-size: 25px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.email,
+.password,
+.confirm-password {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.7rem 0.8rem 0.7rem;
+  font-size: 1.01rem;
+}
+.email-line,
+.password-line,
+.confirm-password-line {
+  width: 100%;
+  height: 2.5px;
+  background: #bbbbbb;
+  border-radius: 50rem;
+  position: relative;
+}
+.email-line::before,
+.password-line::before,
+.confirm-password-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: #000549;
+  border-radius: 50px;
+  transition: 0.35s;
+}
+.email:focus + .email-line::before,
+.password:focus + .password-line::before,
+.confirm-password:focus + .confirm-password-line::before {
+  width: 100%;
+}
+.login-signup-button-box {
+  width: 80%;
+  text-align: end;
+  padding: 0.5rem;
+}
+.login-signup-button-box a {
+  font-size: 0.8rem;
+  display: block;
+  text-decoration: none;
+  transition: 0.25s;
+  color: #000549;
+}
+.login-signup-button-box a:hover {
+  color: royalblue;
+}
+.password-view-box,
+.confirm-password-view-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.Invalid label i {
+  color: #d8000c;
+}
+.Invalid .password-input-box .password-view-box input::placeholder,
+.Invalid
+  .confirm-password-input-box
+  .confirm-password-view-box
+  input::placeholder,
+.Invalid .email-input-animation input::placeholder {
+  color: #db575d;
+}
+.Invalid .email-input-animation .email-line,
+.Invalid .password-input-box .password-view-box .password-line,
+.Invalid
+  .confirm-password-input-box
+  .confirm-password-view-box
+  .confirm-password-line {
+  background: #d8000c;
+}
+
+@media (max-width: 1075px) {
+  .form-box {
+    width: 60%;
+  }
+  .image-box {
+    width: 40%;
+  }
+}
+@media (max-width: 790px) {
+  .form-box {
+    width: 100%;
+  }
+  .image-box {
+    display: none;
+  }
+  .intro-box {
+    width: 100%;
+  }
+  .content-box {
+    margin: 0.4rem 0.5rem;
+  }
+  .password-input-box i,
+  .confirm-password-input-box i {
+    font-size: 15px;
+    margin: 0 0.2rem;
+  }
+}

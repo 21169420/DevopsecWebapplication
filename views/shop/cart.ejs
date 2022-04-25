@@ -1,0 +1,29 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+</head>
+<%- include('../includes/navigation.ejs') %> 
+<body>
+    <div class="content-box">
+        <% if(products.length > 0){%>
+            <h1>Cart</h1>
+            <hr class="line">
+            <% products.map(p=>{%>
+                <div class="cart-box">
+                    <h2><%= p.productId.title %></h2>
+                    <p>Qty : <%= p.quantity %> </p>
+                    <form action="/delete-cart-item" method="POST">
+                        <input type="hidden" name="productId" value="<%= p.productId._id %>">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </div>
+            <%})%>
+            <!-- <form action="/order" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="submit-button">Place Order</button>
+            </form> -->
+            <a href="/checkout" class="detail-button">Checkout</a>
+        <%}else{%>
+            <h1>Nothing is here</h1>
+        <%}%> 
+    </div>
+<%- include('../includes/tail.ejs') %> 

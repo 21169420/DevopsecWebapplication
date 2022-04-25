@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Akzidenz-grotesk-black;
+  src: url(../fonts/Akzidenz-grotesk-black.ttf);
+}
+@font-face {
+  font-family: Akzidenz-grotesk-bold;
+  src: url(../fonts/Akzidenz-grotesk-bold.ttf);
+}
+@font-face {
+  font-family: Akzidenz-grotesk-light;
+  src: url(../fonts/Akzidenz-grotesk-light.ttf);
+}
+@font-face {
+  font-family: Akzidenz-grotesk-roman;
+  src: url(../fonts/Akzidenz-grotesk-roman.ttf);
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.content-box {
+  margin: 2rem 4rem;
+  z-index: -10;
+}
+.centered {
+  width: 100%;
+  margin: auto;
+}
+
+/* Button */
+button {
+  padding: 0.5rem 0.8rem;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s background;
+  border-radius: 7px;
+  z-index: 1;
+}
+.submit-button {
+  background: rgb(63, 141, 230);
+  color: whitesmoke;
+}
+.submit-button:hover {
+  background: rgb(27, 120, 226);
+}
+/*for centering button*/
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+.add-cart-button {
+  background: rgb(63, 141, 230);
+  color: whitesmoke;
+}
+.add-cart-button:hover {
+  background: rgb(27, 120, 226);
+}
+
+/* a tag as button */
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.buttons .button-box {
+  display: block;
+  width: fit-content;
+}
+.detail-button {
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  background: goldenrod;
+  color: #333;
+  border-radius: 7px;
+  transition: 0.25s background;
+}
+.detail-button:hover {
+  background: rgb(235, 170, 7);
+}
+
+.edit-button {
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgb(63, 141, 230);
+  color: #fff;
+  border-radius: 7px;
+  transition: 0.25s background;
+}
+.edit-button:hover {
+  background: rgb(27, 120, 226);
+}
+
+.delete-button {
+  background: rgb(241, 75, 83);
+  color: whitesmoke;
+}
+.delete-button:hover {
+  background: rgb(236, 44, 54);
+}
+.logout-button {
+  color: rgb(241, 75, 83);
+}
+.submit-button-2 {
+  background: rgb(63, 141, 230);
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.submit-button-2:hover {
+  background: rgb(27, 120, 226);
+}
+.flash-message {
+  text-align: center;
+  visibility: hidden;
+  display: block;
+  position: relative;
+}
+.flash-message p::after {
+  content: "";
+  width: 90%;
+  height: 5px;
+  background: #d8000c;
+  bottom: -10px;
+  border-radius: 50px;
+  margin: auto;
+  position: absolute;
+  animation: loading 4950ms linear;
+}
+@-webkit-keyframes loading {
+  0% {
+    width: 0;
+    background: #4f8a10;
+  }
+  75% {
+    background: #4f8a10;
+  }
+  100% {
+    width: 90%;
+    background: #d8000c;
+  }
+}
+
+.flash-message p {
+  background: #ffd2d2;
+  border-left: 5px solid #d8000c;
+  margin: auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  width: fit-content;
+  position: relative;
+  align-items: center;
+  color: #d8000c;
+}
+.flash-message p i {
+  font-size: 40px;
+  margin-right: 0.7rem;
+}
+
+.pagination {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+}
+.pagination a {
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #185adb;
+  text-decoration: none;
+  background: #fff;
+  color: #185adb;
+  border-radius: 10px;
+  transition: 0.15s;
+}
+.pagination a:active,
+.pagination a:hover,
+.pagination a.active-page {
+  color: #fff;
+  background: #185adb;
+}
+@media (max-width: 790px) {
+  .content-box {
+    margin: 0.8rem 1.6rem;
+  }
+}

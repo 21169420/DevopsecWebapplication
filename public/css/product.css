@@ -1,0 +1,51 @@
+.title {
+  color: #333;
+}
+.line {
+  background: #696969;
+  width: 50%;
+}
+.product-title {
+  margin: 2rem 0;
+}
+.image-url {
+  width: 500px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.274);
+  background-position: center;
+}
+
+.price {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+.price span {
+  font-weight: 700;
+  color: rgb(59, 59, 59);
+}
+
+.description {
+  width: 50%;
+}
+
+.product-box {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 790px) {
+  .line {
+    width: 100%;
+  }
+  .image-url {
+    width: 100%;
+    display: inline-block;
+    height: 70%;
+  }
+  .description {
+    width: 100%;
+  }
+  .description p {
+    text-align: justify;
+  }
+}

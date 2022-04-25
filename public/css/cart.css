@@ -1,0 +1,27 @@
+.line {
+  margin: 1rem 0;
+  background: #333;
+  width: 50%;
+}
+
+.cart-box {
+  margin: 1.5rem 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  border-left: 2px solid rgba(136, 136, 136, 0.315);
+  border-top: 1px solid rgba(136, 136, 136, 0.295);
+  box-shadow: 10px 10px 10px -9px rgba(65, 65, 65, 0.185);
+}
+
+@media (max-width: 790px) {
+  .line {
+    width: 100%;
+  }
+  .cart-box {
+    width: 100%;
+  }
+}

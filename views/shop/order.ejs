@@ -1,0 +1,30 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/order.css">
+</head>
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="content-box">
+        <%if(orders.length > 0){%>
+            <h1>Order</h1>
+            <hr class="line">
+            <% orders.map((order)=>{%>
+                <div class="order-box">
+                    <div class="title-box">
+                        <h3>#<%= order._id %></h3>
+                        <a href="/order/<%= order._id %>">Invoice</a>
+                    </div>
+                    <div class="products">
+                        <%order.products.map((p)=>{%>
+                            <div class="product-box">
+                                <h2><%= p.product.title%></h2>
+                                <p>Qty : <span class="bold-text"><%= p.quantity %></span></p>
+                            </div>
+                        <%})%>
+                    </div>
+                </div>
+        <%})%> 
+        <%}else{%>
+            <h1>Nothing is here...</h1>
+        <%}%>
+    </div>
+<%- include('../includes/tail.ejs') %> 

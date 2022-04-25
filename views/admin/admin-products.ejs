@@ -1,0 +1,38 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/card.css">
+</head>
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="content-box">
+        <% if(products.length > 0){%>
+            <h1>Admin Products</h1>
+        <div class="card-grid">
+            <% products.map(product=>{%>
+                <article class="card">
+                    <img src="/<%= product.imageUrl %>" alt="<%= product.title %>" class="image-url">
+                    <div class="cover"></div>
+                    <h3 class="product-title" ><%= product.title %></h3>
+                    <div class="product-box">
+                        <div>
+                            <h4>Description</h4><p>Price : <span class="bold-text">$ <%= product.price %></span></p>
+                        </div>
+                        <hr class="line">
+                        <div class="description">
+                            <p><%= product.description %> </p>
+                        </div>
+                        <div class="buttons">
+                            <a href="/admin/edit-product/<%=product._id%>?edit=true" class="edit-button">Edit</a>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="hidden" name="productId" value=<%= product._id %>>
+                            <button type="button" class="delete-button" onclick={deleteProduct(this)} >Delete</button>
+                        </div>
+                    </div>
+                </article>
+            <%}) %>
+        </div> 
+        <%}else{%>
+            <h1>Nothing here yet...</h1>
+        <%} %> 
+    </div>
+<%- include('../includes/tail.ejs') %>
+<script src="/js/admin.js"></script>

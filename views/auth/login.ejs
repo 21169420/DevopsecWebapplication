@@ -1,0 +1,65 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/login-signup-form.css">
+</head>
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="content-box">
+        <% if(errorMessage.length > 0){%>
+            <div class="flash-message error-message">
+                <p class="message">
+                    <i class="far fa-times-circle"></i> <%= errorMessage %>
+                </p>
+            </div>
+        <%}%>
+        <div class="form-content">
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="blueis image">
+            </div>
+            <div class="form-box">
+                <div class="intro-box">
+                    <h1>Login here...</h1>
+                    <hr class="line">
+                    <p>welcome back, Login to your account to manage your products !</p>
+                </div>
+                <form action="/login" method="POST" class="login-signup-form" novalidate>
+                    <div class="email-box <%= validationErrors.find(e=>e.param === 'email')?'Invalid':'' %>">
+                        <label for="email"><i class="far fa-envelope"></i></label>
+                        <div class="email-input-animation">
+                            <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            class="email"
+                            value="<%= oldInput.email %>"
+                        >
+                        <div class="email-line"></div>
+                        </div>
+                    </div>
+                    <div class="password-box <%= validationErrors.find(e=>e.param === 'password')?'Invalid':'' %>">
+                        <label for="password"><i class="fas fa-lock"></i></label>
+                            <div class="password-input-box">
+                                <div class="password-view-box">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        class="password"
+                                        placeholder="Password"
+                                        value="<%= oldInput.password %>"
+                                    >
+                                    <div class="password-line"></div>
+                                </div>
+                                <i class="fas fa-eye view-password"></i>
+                            </div>
+                    </div>
+                    <div class="login-signup-button-box">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit" class="submit-button-2">Login</button>
+                        <a href="/reset">forgot password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('../includes/tail.ejs') %> 

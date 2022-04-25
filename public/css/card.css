@@ -1,0 +1,59 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 380px;
+  grid-gap: 2rem;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  background: rebeccapurple;
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.123);
+}
+.product-title {
+  text-align: center;
+  color: aliceblue;
+  padding: 1rem 0;
+  z-index: 2;
+}
+.product-box {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 35px 40px rgb(255, 255, 255);
+  padding: 1rem 1rem;
+  z-index: 2;
+}
+.bold-text {
+  font-weight: 500;
+}
+.product-box div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.line {
+  width: 50%;
+  margin: 0.2rem 0;
+  border-color: rgba(189, 189, 189, 0.555);
+}
+.cover {
+  background: rgba(0, 0, 0, 0.253);
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.image-url {
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}

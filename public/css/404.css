@@ -1,0 +1,18 @@
+.not-found-box {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.not-found-box img {
+  width: 500px;
+  height: 500px;
+  margin: 2rem 0;
+  max-width: 80%;
+  height: 80%;
+}
+.not-found-box p {
+  width: 500px;
+  margin: 2rem auto;
+  color: gray;
+  max-width: 80%;
+}

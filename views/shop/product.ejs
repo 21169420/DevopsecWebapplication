@@ -1,0 +1,27 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+</head>
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="content-box">
+        <h1 class="title">Product Details</h1>
+        <hr class="line">
+        <h2 class="product-title"><%= product.title %> </h2>
+        <img class="image-url" src="/<%= product.imageUrl %>" alt="<%= product.title%>">
+        <h4 class="price">Price : <span>$ <%= product.price %></span></h4>
+        <div class="description">
+            <h5>Description :-</h5>
+            <p><%= product.description %> Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Magni porro placeat, ut enim, sequi earum unde dolorem incidunt quos quas eum, tempora est 
+                delectus minima accusantium at ex! Numquam, incidunt? 
+            </p>
+        </div>
+        <% if(isAuthenticated){%>
+            <form action="/cart" method="POST" class="product-box">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="productId" value=<%= product._id %>>
+                <button type="submit" class="add-cart-button">Add To Cart</button>
+            </form>
+        <%} %> 
+    </div>
+<%- include('../includes/tail.ejs') %> 

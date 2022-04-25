@@ -1,0 +1,65 @@
+.line {
+  margin: 0.4rem 0 1rem 0;
+  width: 50%;
+  background: #696969;
+}
+.form {
+  width: 50%;
+}
+.title-box,
+.imageUrl-box,
+.price-box,
+.description-box,
+.email-box,
+.new-password-box {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title,
+.imageUrl,
+.price,
+.description,
+.email,
+.new-password {
+  padding: 0.5rem 0.5rem;
+  outline: none;
+  border: 2px solid rgb(32, 39, 54);
+  border-radius: 6px;
+}
+.Invalid label {
+  color: #d8000c;
+}
+.Invalid input,
+.Invalid textarea {
+  border-color: #d8000c;
+}
+.Invalid input::placeholder {
+  color: #db575d;
+}
+.image {
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1.5px black;
+  margin-top: 0.2rem;
+}
+input[type="file"]::file-selector-button {
+  padding: 0.7em 1.5em;
+  cursor: pointer;
+  background: rgb(63, 141, 230);
+  color: white;
+  margin-right: 0.8rem;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 790px) {
+  .line {
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+  }
+}

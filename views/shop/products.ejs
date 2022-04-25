@@ -1,0 +1,44 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/card.css">
+</head>
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="content-box">
+        <% if(products.length > 0){%>
+            <h1>All Products</h1>
+            <div class="card-grid">
+                <% products.map(product=>{%>
+                    <div class="card">
+                        <img src="/<%= product.imageUrl %>" alt="<%= product.title %>" class="image-url">
+                        <div class="cover"></div>
+                        <h3 class="product-title" ><%= product.title %></h3>
+                        <div class="product-box">
+                            <div>
+                                <h4>Description</h4><p>Price : <span class="bold-text">$ <%= product.price %></span></p>
+                            </div>
+                            <hr class="line">
+                            <div class="description">
+                                <p><%= product.description %> </p>
+                            </div>
+                            <div class="buttons">
+                                <a href="/products/<%=product._id%>" class="detail-button">Details</a>
+                                <% if(isAuthenticated){%>
+                                    <form action="/cart" method="POST" class="button-box">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <input type="hidden" name="productId" value=<%= product._id %>>
+                                        <button type="submit" class="add-cart-button">Add To Cart</button>
+                                    </form>
+                                <%} %>
+                            </div>
+                        </div>
+                    </div>
+                <%}) %>
+            </div>
+            <section class="pagination">
+                <%- include('../includes/pagination.ejs', {currentPage:currentPage, hasPreviousPage:hasPreviousPage, hasNextPage:hasNextPage, nextPage:nextPage, previousPage:previousPage}) %> 
+            </section>
+        <%}else{%>
+            <h1>No products found!</h1>
+        <%} %>
+    </div>
+<%- include('../includes/tail.ejs') %> 
